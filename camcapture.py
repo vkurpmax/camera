@@ -28,7 +28,7 @@ while True:
         break
 
     elif k%256 == 32:
-        img_name = "img0002.png".format(img_counter)
+        img_name = "img0000.png".format(img_counter)
         cv2.imwrite(img_name,frame)
         print("screenshot taken")
         img_counter += 1
