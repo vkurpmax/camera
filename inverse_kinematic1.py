@@ -28,7 +28,7 @@ T2 = 0.0
 T3 = 0.0
 
 def Formulasi():
-    global p1a, p1b, p2a, p2b
+    global p1a, p1b, p2a, p2b, e3
     global L1, L2, L3
     global h, Z
     global X, Y, theta1
@@ -44,34 +44,38 @@ def Formulasi():
     # Formulasi Invers Kinematics Robot Manipulator
     theta1 = math.atan2(Y, X)    # Radian
 
+    r = math.sqrt(X*X + Y*Y + Z*Z)
+    
+    e1 = (X*X + Y*Y + Z*Z - L2*L2 * L3*L3)
+    e2 = (2*L2*L3)
+    e3 = e1/e2
+    elbow = e3
+    
     h = Z - L1  # mm    # This is for theta3
-    c3 = (X*X + Y*Y + h*h - L2*L2 - L3*L3) / (2*L2*L3)  # This is cos theta 3
+    c3 = (X*X + Y*Y + Z*Z - L1*L1 - L2*L2 - L3*L3) / (2*L2*L3)  # This is cos theta 3
     s3 = -math.sqrt(1 - c3*c3)  # For down elbow
     s3a = math.sqrt(1 - c3*c3)  # For up elbow
     theta3 = math.atan2(s3, c3) # Radian
-    #theta3 = math.acos(1)
 
-    #p1a = Y * (L3 * math.cos(math.acos(c3)) + L2)
-    #p1b = X * (L3 * math.sin(math.acos(c3)))
-    #p2a = X * (L3 * math.cos(math.acos(c3)) + L2)
-    #p2b = Y * (L3 * math.sin(math.acos(c3)))
+    p1a = Y * (L3 * math.cos(math.acos(c3)) + L2)
+    p1b = X * (L3 * math.sin(math.acos(c3)))
+    p2a = X * (L3 * math.cos(math.acos(c3)) + L2)
+    p2b = Y * (L3 * math.sin(math.acos(c3)))
     #theta2 = (p1a + p1b) / (p2a - p2b)
-
-    alfa = math.atan2(h , math.sqrt(X*X + Y*Y))
-    beta = math.atan2(math.sin(math.acos(c3)) * L3, L2 + math.cos(math.acos(c3)) * 155)
-    theta2 = alfa + beta
+    theta2 = math.atan2(Z, math.sqrt(X*X + Y*Y)) - math.atan2(L3 * math.sin(math.acos(c3)), L1 + L2 * math.cos(math.acos(c3)))
 
     T1a = theta1 * 180.0 / math.pi  # Degree    # T1a is theta1 in Degree
-    T2a = theta2 * 180.0 / math.pi  # Degree    # T2a is theta2 in Degree
+    T2a = elbow * 180.0 / math.pi  # Degree    # T2a is theta2 in Degree
     T3a = theta3 * 180.0 / math.pi  # Degree    # T3a is theta3 in Degree
 
-    
-    T1 = 510 + (T1a / 0.29297)
+    T2a = -38.64
+    T1 = 500 + (T1a / 0.29297)
     T2 = 204 + (T2a / 0.29297)
-    T3 = 460 + (T3a / 0.29297)
+    T3 = 511 + (T3a / 0.29297)
+    
 
-X = 270
-Y = 155
+X = 230
+Y = 195
 Z = 15
 
 Formulasi()
