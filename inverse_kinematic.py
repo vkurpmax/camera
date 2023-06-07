@@ -1,39 +1,11 @@
 import math
 
-X = 0.0
-Y = 0.0
-Z = 0.0
-
-L1 = 0      # 2147483666
-L2 = 0
-L3 = 0
-
-h = 0.0
-theta1 = 0.0
-c3 = 0.0
-s3 = 0.0
-s3a = 0.0
-theta3 = 0.0
-p1 = 0.0
-p2 = 0.0
-theta2a = 0.0
-theta2 = 0.0
-
-T1a = 0.0
-T2a = 0.0
-T3a = 0.0
-
-T1 = 0.0
-T2 = 0.0
-T3 = 0.0
-
 def Formulasi():
-    global p1a, p1b, p2a, p2b
     global L1, L2, L3
     global h, Z
     global X, Y, theta1
-    global c3, s3, s3a, theta3, theta3a, theta3aa
-    global p1, p2, theta2a, theta2
+    global c3, s3, s3a, theta3
+    global theta2
     global T1a, T2a, T3a
     global T1, T2, T3
 
@@ -49,13 +21,6 @@ def Formulasi():
     s3 = -math.sqrt(1 - c3*c3)  # For down elbow
     s3a = math.sqrt(1 - c3*c3)  # For up elbow
     theta3 = math.atan2(s3, c3) # Radian
-    #theta3 = math.acos(1)
-
-    #p1a = Y * (L3 * math.cos(math.acos(c3)) + L2)
-    #p1b = X * (L3 * math.sin(math.acos(c3)))
-    #p2a = X * (L3 * math.cos(math.acos(c3)) + L2)
-    #p2b = Y * (L3 * math.sin(math.acos(c3)))
-    #theta2 = (p1a + p1b) / (p2a - p2b)
 
     alfa = math.atan2(h , math.sqrt(X*X + Y*Y))
     beta = math.atan2(math.sin(math.acos(c3)) * L3, L2 + math.cos(math.acos(c3)) * 155)

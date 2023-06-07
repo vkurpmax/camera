@@ -34,7 +34,7 @@ while True:
         img_counter += 1
 
 
-    elif cv2.waitKey(1)==ord('q'):
-        break
+    #elif cv2.waitKey(1)==ord('q'):
+        #break
 #cam.release()
 cv2.destroyAllWindows()
