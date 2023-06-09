@@ -85,7 +85,7 @@ print("Val-2: %d" % (val2))         # Result: 120 before 0
 time.sleep(0.015)
 
 SetAngle_4(80)
-SetAngle_5(180)
+SetAngle_5(190)
 
 def Formulasi():
     global L1, L2, L3
@@ -211,7 +211,7 @@ my_dxl_3.set_goal_position(325)
 time.sleep(2)
 #SetAngle_4(90)
 #SetAngle_5(180)
-time.sleep(1)
+#time.sleep(1)
 
 Formulasi()
 
@@ -229,31 +229,29 @@ my_dxl_3.set_goal_position(int(T3))
 time.sleep(2)
 
 SetAngle_4(90)
-SetAngle_5(90)
+SetAngle_5(140)
 
 # Position 4:
 my_dxl_2.set_moving_speed(30)
-SetAngle_5(90)
 my_dxl_2.set_goal_position(400)
-SetAngle_5(90)
+SetAngle_5(140)
+SetAngle_5(140)
+SetAngle_5(140)
+
 
 # Position 4:
 my_dxl_1.set_moving_speed(30)
-SetAngle_5(90)
 my_dxl_2.set_moving_speed(15)
-SetAngle_5(90)
 my_dxl_3.set_moving_speed(30)
-SetAngle_5(90)
 my_dxl_1.set_goal_position(790)
-SetAngle_5(90)
 my_dxl_2.set_goal_position(270)
-SetAngle_5(90)
 my_dxl_3.set_goal_position(325)
-SetAngle_5(90)
-time.sleep(3)
+SetAngle_5(140)
+SetAngle_5(140)
+SetAngle_5(140)
+
 SetAngle_4(90)
-SetAngle_5(180)
-time.sleep(1)
+SetAngle_5(190)
 
 # Position 5:
 my_dxl_2.set_moving_speed(30)
